@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootFirstTryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootFirstTryApplication.class, args);
+//		SpringApplication.run(SpringBootFirstTryApplication.class, args);
+		var orderService = new OrderService(new PayPalPaymentService());
+		orderService.placeOrder();
 	}
 
 }
